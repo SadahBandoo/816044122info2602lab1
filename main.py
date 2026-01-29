@@ -172,3 +172,64 @@ for num in data:
 
 print(myset)# {0, 1, 2, 3, 32, 42, 10, 20}
 num_unique = len(myset)
+
+mydict = {
+        "name":"bob",
+        "age": 34
+}
+
+print(mydict)
+
+# assessing a key
+print(mydict['age'])
+
+# adding a new key and value
+mydict['height'] = 7
+
+# iterating keys
+for key in mydict:
+        print(key)
+
+# iterating values
+for key in mydict:
+        print(mydict[key])
+
+# check for a key
+if 'weight' in mydict:
+        print(mydict['weight'])
+else:
+        print('no weight property!')
+
+#Parent class
+class Person:
+
+  def __init__(self, name, height, weight):
+    self.name = name;
+    self.height = height;
+    self.weight = weight;
+
+  def sayHello(self):
+    print("Hello! I'm a person, my name is", self.name)
+
+# Child class inherits from Person
+class Student(Person):
+
+        # super is the reference to the parent class Person so 
+        # we call Person's constructor here to set the Person
+        # properties of the student instance
+        def __init__(self, stid, name, height, weight):
+                super().__init__(name, height, weight)
+                self.stid = stid
+        
+        # override method of parent
+        def sayHello(self):
+                print("Hello! I'm a student, my name is", self.name)
+
+
+bob = Person('bob', 12, 34)
+sally = Student(123, 'sally', 7, 34)
+
+bob.sayHello();
+sally.sayHello();
+
+print(bob.name);        
